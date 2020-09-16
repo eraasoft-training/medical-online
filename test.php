@@ -2,11 +2,6 @@
 
 require_once "app.php";
 
-$name = "kareem";
+// echo isEmail('kareem@erasoftcom');
 
-echo $name;
-
-if (condition) {
-  # code...
-}
-
+aredirect("city/add.html");

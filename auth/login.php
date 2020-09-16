@@ -27,8 +27,10 @@
                                 $$key = prepareInput($_POST[$key]);
                             }
 
-                            echo $email;
-                            echo $password;
+                            // validation 
+
+
+                            // if all data is valid, check user in db
                         }
 
                     

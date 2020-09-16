@@ -5,3 +5,15 @@ function prepareInput(string $input): string
 {
   return trim(htmlspecialchars($input));
 }
+
+// redirect to website-url/path
+function redirect(string $path)
+{
+  header("location:" . URL . $path);
+}
+
+// redirect to website-url/admin/path
+function aredirect(string $path)
+{
+  header("location:" . AURL . $path);
+}
