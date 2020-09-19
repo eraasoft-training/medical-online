@@ -17,3 +17,17 @@ function getOne(string $table, string $where): array
     return [];
   }
 }
+
+function getAll(string $table): array 
+{
+  global $conn;
+  
+  $sql = "SELECT * FROM $table";
+  $result = mysqli_query($conn, $sql);
+
+  if (mysqli_num_rows($result) > 0) {
+    return mysqli_fetch_all($result, MYSQLI_ASSOC);
+  } else {
+    return [];
+  }
+}

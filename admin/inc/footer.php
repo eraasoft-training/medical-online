@@ -1,7 +1,7 @@
 
-    <script src="../assets/js/jquery-3.5.1.slim.min.js"></script>
-    <script src="../assets/js/popper.min.js"></script>
-    <script src="../assets/js/bootstrap.js"></script>
+    <script src="<?php echo URL; ?>assets/js/jquery-3.5.1.slim.min.js"></script>
+    <script src="<?php echo URL; ?>assets/js/popper.min.js"></script>
+    <script src="<?php echo URL; ?>assets/js/bootstrap.js"></script>
         <script>
 
             $(".delete-record").click(()=>{
@@ -12,7 +12,7 @@
                 }
                 else 
                 {
-                    return false;
+                  return false;
                 }
             })
 
