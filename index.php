@@ -1,3 +1,4 @@
+<?php require_once "app.php"; ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -41,14 +42,16 @@
                     </div>
                     <div class="form-group">
                         <label for="city"  class="text-white">Your City</label>
+                        <?php $cities = getWhere("cities", "city_is_active = '1'"); ?>
                         <select name="city_id" class="form-control" id="city">
-                            <option > City one </option>
-                            <option > City two </option>
-                            <option > City three </option>
+                            <?php foreach($cities as $city): ?>
+                                <option value="<?php echo $city['city_id']; ?>"> <?php echo $city['city_name']; ?> </option>
+                            <?php endforeach; ?>
                         </select>
                     </div>
                     <div class="form-group"  >
                         <label for="ser"  class="text-white">Choose Service</label>
+                        <?php $cities = getAll("services"); ?>
                         <select name="ser_id" class="form-control" id="ser">
                             <option > Service one </option>
                             <option > Service two </option>

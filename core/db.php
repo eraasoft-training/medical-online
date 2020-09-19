@@ -32,6 +32,20 @@ function getAll(string $table): array
   }
 }
 
+function getWhere(string $table, string $where): array 
+{
+  global $conn;
+  
+  $sql = "SELECT * FROM $table WHERE $where";
+  $result = mysqli_query($conn, $sql);
+
+  if (mysqli_num_rows($result) > 0) {
+    return mysqli_fetch_all($result, MYSQLI_ASSOC);
+  } else {
+    return [];
+  }
+}
+
 function insert(string $table, array $data): bool
 {
   global $conn;
