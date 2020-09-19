@@ -50,3 +50,24 @@ function insert(string $table, array $data)
 
   return mysqli_query($conn, $sql);
 }
+
+function update(string $table, array $data, string $where) 
+{
+  global $conn;
+  $set = '';
+
+  foreach ($data as $key => $value) {
+    $set .= "$key = '$value',";
+  }
+
+  $set = substr($set, 0, -1);
+
+  $sql = "UPDATE $table SET $set WHERE $where";
+
+  return mysqli_query($conn, $sql);
+}
+
+// UPDATE cities set city_name = 'cairo',
+// city_is_active = 1,
+
+// where city_id = 

@@ -3,8 +3,7 @@
 require_once "app.php";
 
 $data = [
-  'city_name' => "cairo",
-  'city_is_active' => 1,
+  'city_name' => "cairooo",
 ];
 
-insert("cities", $data);
+update("cities", $data, "city_id = 1");
