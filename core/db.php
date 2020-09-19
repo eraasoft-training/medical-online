@@ -32,7 +32,7 @@ function getAll(string $table): array
   }
 }
 
-function insert(string $table, array $data) 
+function insert(string $table, array $data): bool
 {
   global $conn;
   $keys = '';
@@ -51,7 +51,7 @@ function insert(string $table, array $data)
   return mysqli_query($conn, $sql);
 }
 
-function update(string $table, array $data, string $where) 
+function update(string $table, array $data, string $where): bool
 {
   global $conn;
   $set = '';
@@ -67,7 +67,33 @@ function update(string $table, array $data, string $where)
   return mysqli_query($conn, $sql);
 }
 
-// UPDATE cities set city_name = 'cairo',
-// city_is_active = 1,
+function delete(string $table, string $where): bool 
+{
+  global $conn;
 
-// where city_id = 
+  $sql = "DELETE FROM $table WHERE $where";
+
+  return mysqli_query($conn, $sql);
+}
+
+function getCount(string $table): int
+{
+  global $conn;
+
+  $sql = "SELECT COUNT(*) AS cnt FROM $table";
+
+  $result = mysqli_query($conn, $sql);
+
+  return mysqli_fetch_assoc($result)['cnt'];
+}
+
+function getCountWhere(string $table, string $where): int
+{
+  global $conn;
+
+  $sql = "SELECT COUNT(*) AS cnt FROM $table WHERE $where";
+
+  $result = mysqli_query($conn, $sql);
+
+  return mysqli_fetch_assoc($result)['cnt'];
+}

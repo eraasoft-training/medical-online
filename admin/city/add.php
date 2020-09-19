@@ -27,13 +27,15 @@
                 $data = [
                     'city_name' => $name
                 ];
-                
+
                 $is_inserted = insert("cities", $data);
 
                 if($is_inserted) {
                     // display success message
+                    $success = "added successfully";
                 } else {
                     // an 
+                    $query_error = "error while adding";
                 }
             }
 
@@ -46,6 +48,8 @@
         <div class="card-header">
             <h3 class="text-center">Add New City</h3>
             <div>
+                <?php require ADMIN . "inc/messages.php"; ?>
+
                 <form class="border p-5 my-3 " method="POST" action="">
                     <div class="form-group">
                         <label for="name"  class="text-dark ">City Name <?php getError('name'); ?></label>

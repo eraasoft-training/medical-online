@@ -17,3 +17,8 @@ function aredirect(string $path)
 {
   header("location:" . AURL . $path);
 }
+
+function abort()
+{
+  header("location:" . URL . "404.php");
+}

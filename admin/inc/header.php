@@ -28,8 +28,8 @@
                 Cities
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Add New</a>
-                    <a class="dropdown-item" href="#">View All</a>
+                    <a class="dropdown-item" href="<?php echo AURL . "city/add.php"; ?>">Add New</a>
+                    <a class="dropdown-item" href="<?php echo AURL . "city/view.php"; ?>">View All</a>
                 </div>
             </li>
 
@@ -59,7 +59,7 @@
 
 
             <li class="nav-item active">
-                <a class="nav-link" href="#" target="_blank">Visit Site <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="<?php echo URL; ?>" target="_blank">Visit Site <span class="sr-only">(current)</span></a>
             </li>
         </ul>
 

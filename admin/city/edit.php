@@ -56,8 +56,11 @@ if(isset($_GET['city_id']) and is_numeric($_GET['city_id'])) {
                         if($is_updated) { 
                             $city = getOne("cities", "city_id = '$city_id'");
                             // display success message
+                            $success = "updated successfully";
+
                         } else {
                             // an 
+                            $query_error = "error while updating";
                         }
                     }
 
@@ -65,6 +68,7 @@ if(isset($_GET['city_id']) and is_numeric($_GET['city_id'])) {
                 }
             ?>
             <div>
+                <?php require ADMIN . "inc/messages.php"; ?>
                 <form class="border p-5 my-3 " method="POST" action="">
                     <div class="form-group">
                         <label for="name"  class="text-dark "> Name <?php getError('name'); ?></label>
