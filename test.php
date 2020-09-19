@@ -9,7 +9,16 @@ require_once "app.php";
 
 // echo notMoreThan('heheheheaaaaaaa', 10);
 
-$email = "kareem@erasssoft.com";
-$admin = getOne("admins", "admin_email = '$email' ");
+// $email = "kareem@erasssoft.com";
+// $admin = getOne("admins", "admin_email = '$email' ");
 
-print_r($admin);
+// print_r($admin);
+
+function test() 
+{
+  global $x;
+
+  $x = 3;
+}
+
+echo $x;
