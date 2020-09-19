@@ -27,22 +27,6 @@
                                 $$key = prepareInput($_POST[$key]);
                             }
 
-                            // validation 
-                            // email: required, email, max:100 
-                            // if(isRequired($email)) {
-                            //     if(isEmail($email)) {
-                            //         if(notMoreThan($email, 100)) {
-
-                            //         } else {
-                            //             $errors['email'] = "must be <= 100";
-                            //         }
-                            //     } else {
-                            //         $errors['email'] = "not valid";
-                            //     }
-                            // } else {
-                            //     $errors['email'] = "required";
-                            // }
-
                             if (! isRequired($email)) {
                                 $errors['email'] = "required";
                             } elseif (! isEmail($email)) {

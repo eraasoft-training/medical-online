@@ -2,7 +2,9 @@
 
 require_once "app.php";
 
+$data = [
+  'city_name' => "cairo",
+  'city_is_active' => 1,
+];
 
-echo "<pre>";
-print_r(getAll("cities"));
-echo "</pre>";
+insert("cities", $data);

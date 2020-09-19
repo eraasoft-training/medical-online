@@ -16,7 +16,7 @@ function getOne(string $table, string $where): array
   } else {
     return [];
   }
-}
+}                   
 
 function getAll(string $table): array 
 {
@@ -30,4 +30,23 @@ function getAll(string $table): array
   } else {
     return [];
   }
+}
+
+function insert(string $table, array $data) 
+{
+  global $conn;
+  $keys = '';
+  $values = '';
+
+  foreach ($data as $key => $value) {
+    $keys .= "$key,";
+    $values .= "'$value',";
+  }
+
+  $keys = substr($keys, 0, -1);
+  $values = substr($values, 0, -1);
+
+  $sql = "INSERT INTO $table ($keys) VALUES ($values)";
+
+  return mysqli_query($conn, $sql);
 }
